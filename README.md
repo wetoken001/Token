@@ -1,1 +1,1 @@
-# Token
+# WeToken Contract
