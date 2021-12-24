@@ -10,7 +10,6 @@ contract ERC20Token is IERC20, Ownable{
   string private _symbol= "wBTC";
   string private _name= "WeToken BTC";
   uint8 private _decimals =18;
-  uint256 private _totalSupply =10000000000000000000000000000;
   uint256 private _tokenBalance=10000000000000000000000000000;
   address private _usdtcontract=0xa71EdC38d189767582C38A3145b5873052c3e47a;// USDT
   uint8 private _usdtdecimals=18;
@@ -37,9 +36,6 @@ contract ERC20Token is IERC20, Ownable{
   function decimals() public view returns (uint8) {
     return _decimals;
   }
-   function totalSupply() public view virtual override returns (uint256) {
-        return _totalSupply;
-    }
     function balanceOf(address account) public view virtual override returns (uint256) {
         return _balances[account];
     }
