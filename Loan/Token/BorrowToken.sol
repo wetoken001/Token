@@ -72,7 +72,7 @@ contract BorrowToken is Ownable{
 
     function Borrow(address coincontract,uint256 usdtnum,uint256 amount,uint256 coinprice,uint8 day,uint8 pledgerate) public payable returns (bool) {
       require(_usernum[_msgSender()] <65535, "ERC20: owner record>65535");
-      require(ChainLink(_linkpricecontract).checkPrice(coincontract,coinprice)==true,"ChainLink price verification failed");
+      require(ChainLink(_linkpricecontract).checkPrice(coincontract,coinprice),"ChainLink price verification failed");
       require(pledgerate<91, "ERC20: pledge rate error");
       uint8 tmpde=_contractopen[coincontract];
       require(tmpde>0,"ERC20:token contract is close");
