@@ -176,7 +176,7 @@ contract LinkPrice is Ownable{
     function getPrice(string memory symbol) public view returns(uint256){
         uint256 cPrice = getThePrice();
         uint256 sPrice = _coinprice[symbol];
-        uint256 peroff=saveprice.div(3);
+        uint256 peroff=sPrice.div(3);
 
         if(cPrice>sPrice && cPrice<=sPrice.add(peroff) || cPrice<sPrice && cPrice>=sPrice.sub(peroff) || cPrice==sPrice){
             return sPrice;
